@@ -1,0 +1,23 @@
+.about-section {
+  background-color: #1ABC9C;
+  /* min-height: 150vh;  */
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: adjust spacing and look */
+.about-section .container {
+  padding: 60px 0;
+}
+
+.about-img {
+  max-width: 50%;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+

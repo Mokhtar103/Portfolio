@@ -1,0 +1,62 @@
+<section class="portfolio-section text-center py-5 mb-5 mt-5">
+  <div class="container">
+    <h2 class="mb-4 fw-bold">PORTFOLIO COMPONENT</h2>
+    <div class="divider d-flex align-items-center justify-content-center mb-4">
+      <div class="line me-3"></div>
+      <i class="fa-solid fa-star"></i>
+      <div class="line ms-3"></div>
+    </div>
+
+    <div class="row g-4">
+    @for (project of projects; track $index) {
+          <div
+        class="col-md-4"
+        (click)="openModal(project)"
+      >
+        <div class="portfolio-item position-relative">
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+            class="img-fluid rounded shadow-sm"
+          />
+          <div class="overlay d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-plus fa-2x text-white"></i>
+          </div>
+        </div>
+      </div>
+    }
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="portfolioModal"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">{{ selectedProject?.title }}</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <img
+            [src]="selectedProject?.image"
+            alt="project image"
+            class="img-fluid rounded mb-3"
+          />
+          <p>{{ selectedProject?.description }}</p>
+          <p>Github: <a href="">{{ selectedProject?.link }}</a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
